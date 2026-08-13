@@ -35,7 +35,9 @@ jobs:
       - run: npm run audit:vocab
       - run: npm run test:vocab-audit
       - run: npm run test:vocab-manual-decisions
-      - run: npm run test:content
+      # Published chapters are business data kept out of GitHub. deploy.sh runs
+      # this gate against the existing server database after human approval and
+      # before the PM2 reload.
       - run: npm run test:api
       - run: npm run build
       - run: npx playwright install --with-deps chromium
