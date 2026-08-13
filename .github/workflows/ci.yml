@@ -28,6 +28,10 @@ jobs:
           bun-version: 1.2.18
       - run: npm ci
       - run: npm run test:credential-safety
+      # The product database is intentionally not versioned. Build an ephemeral
+      # schema and seed it from the versioned CSV before read-only auditing.
+      - run: DB_URL=./data/curio.db npm run db:push
+      - run: npm run db:seed
       - run: npm run audit:vocab
       - run: npm run test:vocab-audit
       - run: npm run test:vocab-manual-decisions
