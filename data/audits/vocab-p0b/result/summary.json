@@ -1,0 +1,121 @@
+{
+  "status": "PASS_WITH_DISCLOSED_LIMITATIONS",
+  "generated_at": "2026-08-13T01:42:10.379Z",
+  "product_rows": 3500,
+  "unique_words": 3500,
+  "database_rows": 3500,
+  "csv_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+  "expected_product_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+  "exact_pipeline_product_match": true,
+  "evidence_applies_to_product": true,
+  "fields": [
+    {
+      "field": "phonetic",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 3500,
+      "trace_partial": 0,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "pos",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 3500,
+      "trace_partial": 0,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "meaning_cn",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 3500,
+      "trace_partial": 0,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "level",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 3500,
+      "trace_partial": 0,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "gaokao_frequency",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 3500,
+      "trace_partial": 0,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "word_family",
+      "nonempty": 189,
+      "empty": 3311,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 0,
+      "trace_partial": 3500,
+      "trace_unavailable": 0
+    },
+    {
+      "field": "tags",
+      "nonempty": 3500,
+      "empty": 0,
+      "format_anomalies": 0,
+      "placeholders": 0,
+      "csv_db_conflicts": 0,
+      "trace_confirmed": 0,
+      "trace_partial": 3500,
+      "trace_unavailable": 0
+    }
+  ],
+  "conflicts": {
+    "total": 0,
+    "upstream_candidate_conflicts": "not_confirmable_from_selected-source-only_evidence"
+  },
+  "suspected_placeholders": 0,
+  "low_specificity_generated_tags": 3301,
+  "word_family": {
+    "current_nonempty": 189,
+    "current_members": 196,
+    "classification_counts": {
+      "auto_fill_candidate": 118,
+      "manual_review": 40,
+      "reliable_value": 157,
+      "should_not_fill": 3185
+    },
+    "warning": "auto_fill_candidate means a machine-generated review candidate; this audit never writes it to the product vocabulary"
+  },
+  "ecdict_actual_use": {
+    "pos_selected_rows": 3296,
+    "meaning_selected_rows": 527,
+    "ranking_input_rows_with_positive_bnc_or_frq": 3494,
+    "product_tags_from_ecdict": 0,
+    "product_word_family_from_ecdict": 0,
+    "note": "ECDICT tag helps extension selection (gk) and bnc/frq helps level ranking; product tags and current word_family come from Curio policies, not ECDICT fields."
+  },
+  "limitations": [
+    "Original evidence stores the selected source label, not all competing candidate values; upstream semantic conflicts cannot be reconstructed for every row.",
+    "Original evidence has no dedicated row-level source columns for level, word_family, or tags; this audit confirms them by reproducing the fixed pipeline policies.",
+    "Teacher PDF has no URL or license grant in the source manifest; its reuse boundary remains unconfirmed.",
+    "ECDICT/ipa-dict/CMUdict snapshots have file hashes but no upstream commit recorded in the original manifest."
+  ]
+}

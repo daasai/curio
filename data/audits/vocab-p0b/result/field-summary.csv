@@ -1,0 +1,8 @@
+field,nonempty,empty,format_anomalies,placeholders,csv_db_conflicts,trace_confirmed,trace_partial,trace_unavailable
+phonetic,3500,0,0,0,0,3500,0,0
+pos,3500,0,0,0,0,3500,0,0
+meaning_cn,3500,0,0,0,0,3500,0,0
+level,3500,0,0,0,0,3500,0,0
+gaokao_frequency,3500,0,0,0,0,3500,0,0
+word_family,189,3311,0,0,0,0,3500,0
+tags,3500,0,0,0,0,0,3500,0

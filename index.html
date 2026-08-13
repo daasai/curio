@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curio — 每个单词，都是一个世界的入口</title>
+  <meta name="description" content="Curio 是一款 AI 驱动的沉浸式英语词汇学习应用，让高中生在真实故事中轻松掌握高考词汇。" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Landing Screen ─────────────────────────────────────── */
+    #landing {
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .landing-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .logo-icon {
+      width: 52px; height: 52px;
+      background: var(--grad-gold);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: var(--shadow-gold);
+    }
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .landing-tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: var(--text-secondary);
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .landing-feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 32px 0;
+    }
+    .feature-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 640px;
+      width: 100%;
+      margin: 32px auto;
+    }
+    .preview-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      transition: all var(--dur-mid) var(--ease-out);
+    }
+    .preview-card:hover {
+      border-color: var(--border-gold);
+      background: rgba(245,200,66,0.04);
+      transform: translateY(-3px);
+    }
+    .preview-card .icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .preview-card .label { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+    @media (max-width: 480px) {
+      .feature-preview { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .preview-card { padding: 14px 8px; }
+    }
+
+    /* ── Onboarding Screen ──────────────────────────────────── */
+    #onboarding {
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+    }
+    .ob-container {
+      width: 100%;
+      max-width: 680px; /* Wider for story reading */
+    }
+    .ob-steps {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 32px;
+    }
+    .ob-step {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--bg-glass);
+      transition: background var(--dur-mid) ease;
+    }
+    .ob-step.active { background: var(--accent-gold); }
+    .ob-step.done { background: rgba(245,200,66,0.4); }
+    .ob-footer {
+      margin-top: 32px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .ready-ring {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 2px solid rgba(245,200,66,0.3);
+      box-shadow: 0 0 40px rgba(245,200,66,0.15);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      animation: ringPulse 2s ease-in-out infinite;
+    }
+    @keyframes ringPulse {
+      0%,100% { transform: translate(-50%,-50%) scale(1); opacity:0.6; }
+      50%      { transform: translate(-50%,-50%) scale(1.15); opacity:1; }
+    }
+    #onboarding-content h2 { font-size: 1.5rem; margin-bottom: 8px; }
+    
+    /* Onboarding Intensity Card Choices */
+    .intensity-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .intensity-card {
+      background: var(--bg-glass);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--dur-mid) var(--ease-out);
+    }
+    .intensity-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+    }
+    .intensity-card.selected {
+      border-color: var(--accent-gold);
+      background: rgba(245, 200, 66, 0.08);
+    }
+    .intensity-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .intensity-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+    .intensity-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4; }
+
+    @media (max-width: 600px) {
+      .intensity-container { grid-template-columns: 1fr; }
+    }
+
+    /* ── Home Screen ────────────────────────────────────────── */
+    #home {
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .home-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      background: rgba(12,14,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 50;
+    }
+    .home-nav .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .home-nav .nav-logo-icon {
+      width: 32px; height: 32px;
+      background: var(--grad-gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .home-nav .nav-logo-text {
+      font-size: 1.1rem;
+      font-weight: 800;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .home-nav-links { display: flex; gap: 4px; }
+
+    .home-main { flex: 1; padding: 32px 24px 60px; }
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) { .home-grid { grid-template-columns: 1fr; } }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* Main story card */
+    .main-story-card {
+      background: linear-gradient(135deg, rgba(100,80,200,0.12) 0%, rgba(26,30,53,0.9) 60%);
+      border: 1px solid rgba(100,80,200,0.2);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all var(--dur-mid) var(--ease-out);
+    }
+    .main-story-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .main-story-card:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(100,80,200,0.2); border-color: rgba(167,139,250,0.35); }
+    .story-card-chapter { font-size: 0.75rem; color: var(--accent-purple); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+    .story-card-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .story-card-excerpt { font-family: var(--font-story); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .story-card-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .progress-section { margin-bottom: 20px; }
+    .progress-section .progress-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Streak Card (Narrative Streak) */
+    .streak-card {
+      background: linear-gradient(135deg, rgba(245,200,66,0.08) 0%, var(--bg-glass) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+    .streak-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .streak-flame { font-size: 1.8rem; }
+    .streak-headline { font-weight: 800; font-size: 1.05rem; color: var(--accent-gold); }
+    .streak-quote {
+      font-family: var(--font-story);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      border-left: 2px solid var(--border-gold);
+      padding-left: 10px;
+      margin: 4px 0;
+    }
+    .streak-simulation-bar {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 10px;
+      font-size: 0.72rem;
+      align-items: center;
+    }
+    .streak-sim-btn {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 0.72rem;
+      transition: all var(--dur-fast);
+    }
+    .streak-sim-btn:hover {
+      background: var(--bg-glass-hover);
+      border-color: var(--border-medium);
+      color: var(--text-primary);
+    }
+    .streak-sim-btn.active {
+      background: rgba(245,200,66,0.15);
+      border-color: var(--border-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Stats sidebar */
+    .stats-card-mini {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+    .mini-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .mini-stat-row:not(:last-child) {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .mini-stat-label { font-size: 0.82rem; color: var(--text-secondary); }
+    .mini-stat-val { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+    /* ── Reader Screen ──────────────────────────────────────── */
+    #reader {
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .reader-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(12,14,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .reader-progress-bar { position: absolute; bottom: 0; left: 0; right: 0; }
+    .reader-body {
+      flex: 1;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .chapter-badge { margin-bottom: 24px; }
+    .chapter-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+    #story-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+    #story-content { margin-bottom: 16px; }
+    .word-tip-hint {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      background: var(--bg-glass);
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+
+    /* Branching Story Container */
+    .branch-story-container {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(26, 30, 53, 0.9) 60%);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 24px;
+      font-family: var(--font-story);
+      font-size: 1rem;
+      line-height: 1.8;
+      animation: screenIn var(--dur-slow) var(--ease-out);
+    }
+    .branch-header {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--accent-coral);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── Vocab Screen ───────────────────────────────────────── */
+    #vocab-screen {
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .vocab-header {
+      padding: 24px 24px 0;
+      max-width: 680px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #vocab-list {
+      max-width: 680px;
+      margin: 24px auto;
+      padding: 0 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Vocab Scene-Based Cards */
+    .vocab-scene-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      transition: all var(--dur-mid);
+    }
+    .vocab-scene-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+    .vocab-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .vocab-word-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+    .vocab-word-phonetic {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+    .vocab-word-meaning {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      margin-top: 4px;
+    }
+    .vocab-quote-box {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 2px solid var(--border-gold);
+      padding: 10px 14px;
+      font-family: var(--font-story);
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .vocab-scene-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      color: var(--accent-purple);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* ── Parent Report Screen ────────────────────────────────── */
+    #parent-screen {
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .parent-container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 24px 60px;
+      width: 100%;
+    }
+    .parent-report-card {
+      background: linear-gradient(135deg, rgba(45,212,191,0.04) 0%, var(--bg-card) 100%);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .parent-title-group {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .parent-title-group h2 { font-size: 1.4rem; color: var(--text-primary); }
+    .parent-title-group p { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+    
+    .report-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .report-stat-item {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 8px;
+      text-align: center;
+    }
+    .report-stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-teal);
+    }
+    .report-stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    .report-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .report-detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 0.88rem;
+    }
+    .report-detail-row:not(:last-child) {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .sharing-cta-box {
+      background: rgba(100, 80, 200, 0.08);
+      border: 1px dashed rgba(167, 139, 250, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 480px) {
+      .report-stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="particles"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║        SCREEN: LANDING           ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="landing" class="screen">
+  <div class="z-1" style="width:100%;max-width:600px">
+    <!-- Logo -->
+    <div class="landing-logo">
+      <div class="logo-icon">✦</div>
+      <span class="logo-text">Curio</span>
+    </div>
+
+    <!-- Hero -->
+    <h1 style="margin-bottom:16px">
+      每个单词<br/>
+      <span style="background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">都是一个世界的入口</span>
+    </h1>
+    <p class="landing-tagline">
+      AI 将高考词汇嵌入沉浸式冒险故事。读剧情，做抉择。专注提升阅读语境理解，科学提分。
+    </p>
+
+    <!-- Feature Pills -->
+    <div class="landing-feature-pills">
+      <span class="badge badge-gold">✦ AI 专属故事</span>
+      <span class="badge badge-purple">🎭 沉浸式叙事</span>
+      <span class="badge badge-teal">⚡ 关键抉择机制</span>
+      <span class="badge badge-coral">📚 高考词汇对齐</span>
+      <span class="badge badge-gold">🕵️ 剧本杀式体验</span>
+    </div>
+
+    <!-- Preview Cards -->
+    <div class="feature-preview">
+      <div class="preview-card">
+        <div class="icon">📖</div>
+        <div class="label">双轨语境<br/>故事世界</div>
+      </div>
+      <div class="preview-card">
+        <div class="icon">⚡</div>
+        <div class="label">支线汇流<br/>无感纠错</div>
+      </div>
+      <div class="preview-card">
+        <div class="icon">📈</div>
+        <div class="label">基线诊断<br/>效果可见</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <button class="btn btn-primary btn-lg" id="start-btn" style="margin-top:8px">
+      先读一段故事 →
+    </button>
+    <p class="mt-3" style="font-size:0.82rem;color:var(--text-muted)">高考核心词汇表 · 100% 科学记忆</p>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║       SCREEN: ONBOARDING         ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="onboarding" class="screen">
+  <div class="ob-container z-1">
+    <!-- Steps indicator -->
+    <div class="ob-steps">
+      <div class="ob-step"></div>
+      <div class="ob-step"></div>
+      <div class="ob-step"></div>
+      <div class="ob-step"></div>
+    </div>
+
+    <!-- Dynamic content container -->
+    <div id="onboarding-content"></div>
+
+    <!-- Footer -->
+    <div class="ob-footer">
+      <button class="btn btn-primary" id="ob-next-btn">继续 →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║        SCREEN: HOME              ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="home" class="screen">
+  <!-- Nav -->
+  <nav class="home-nav">
+    <div class="nav-logo">
+      <div class="nav-logo-icon">✦</div>
+      <span class="nav-logo-text">Curio</span>
+    </div>
+    <div class="home-nav-links">
+      <button class="btn btn-ghost btn-sm" data-nav="home">首页</button>
+      <button class="btn btn-ghost btn-sm" data-nav="vocab-screen">词汇本</button>
+      <button class="btn btn-ghost btn-sm" data-nav="parent-screen" style="border: 1px solid rgba(45,212,191,0.25); color: var(--accent-teal)">家长报告 (v0.3)</button>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="home-main z-1">
+    <div class="home-grid">
+
+      <!-- Left: Narrative Streak + Main Story Card -->
+      <div>
+        <!-- Narrative Streak Card -->
+        <div class="section-label">🔥 故事连击状态</div>
+        <div class="streak-card mb-6" id="dashboard-streak-card">
+          <!-- Dyn details rendered by JS -->
+        </div>
+
+        <!-- Main story -->
+        <div class="section-label">📖 今日主线章节</div>
+        <div class="main-story-card" id="main-story-btn">
+          <div class="story-card-chapter">第一章 · 悬疑推理</div>
+          <div class="story-card-title">深夜的第七号车厢</div>
+          <div class="story-card-excerpt">
+            "夜晚十一点整，快车缓缓驶出站台。林亦手里捏着父亲失踪前留下的最后信件，措辞模糊不清，每一句都指向不同的方向。列车长报纸下遮盖的小包裹，又藏着怎样的秘密？"
+          </div>
+          <div class="story-card-meta">
+            <span class="badge badge-purple">悬疑推理</span>
+            <span class="badge badge-gold">⏱ 8 分钟</span>
+            <span class="badge badge-teal">今日：5 个词汇</span>
+          </div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>阅读进度</span>
+              <span>未开始（第 1 / 5 章）</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="pointer-events:none">继续调查故事 →</button>
+        </div>
+      </div>
+
+      <!-- Right: User Stats Summary -->
+      <div>
+        <div class="section-label">📊 学习档案</div>
+        <div class="stats-card-mini mb-6">
+          <div class="mini-stat-row">
+            <span class="mini-stat-label">词汇世界收录</span>
+            <span class="mini-stat-val" id="profile-vocab-count">0 / 5 个</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label">连续探索天数</span>
+            <span class="mini-stat-val" id="profile-streak-count">3 天</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label">起点诊断水平</span>
+            <span class="mini-stat-val" id="profile-diag-level">高考水平：进阶 (B)</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label">核心抉择正确率</span>
+            <span class="mini-stat-val" id="profile-accuracy">--</span>
+          </div>
+        </div>
+
+        <div class="section-label">💡 今日学习目标</div>
+        <div class="glass-card" style="padding:20px">
+          <p style="font-size:0.82rem;line-height:1.5;margin-bottom:12px;color:var(--text-secondary)">
+            今天的章节将高亮曝光以下核心高考词汇：
+          </p>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="badge badge-gold" style="padding: 2px 6px">核心</span>
+              <span style="font-weight:700;color:var(--accent-gold);font-size:0.9rem">ambiguous</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">模糊的；歧义的</span>
+            </div>
+            <div class="divider"></div>
+            <div class="flex items-center gap-3" style="opacity: 0.8">
+              <span class="badge badge-teal" style="padding: 2px 6px">语境</span>
+              <span style="font-weight:600;color:var(--text-secondary);font-size:0.9rem">deduce</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">推断；推论</span>
+            </div>
+            <div class="divider"></div>
+            <div class="flex items-center gap-3" style="opacity: 0.8">
+              <span class="badge badge-teal" style="padding: 2px 6px">语境</span>
+              <span style="font-weight:600;color:var(--text-secondary);font-size:0.9rem">concealed</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">隐藏的；隐蔽的</span>
+            </div>
+            <div class="divider"></div>
+            <div class="flex items-center gap-3" style="opacity: 0.6">
+              <span class="badge badge-teal" style="padding: 2px 6px">语境</span>
+              <span style="font-weight:600;color:var(--text-secondary);font-size:0.9rem">resilient</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">有韧性的</span>
+            </div>
+            <div class="divider"></div>
+            <div class="flex items-center gap-3" style="opacity: 0.6">
+              <span class="badge badge-teal" style="padding: 2px 6px">语境</span>
+              <span style="font-weight:600;color:var(--text-secondary);font-size:0.9rem">persevere</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">锲而不舍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║       SCREEN: READER             ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="reader" class="screen">
+  <!-- Nav -->
+  <nav class="reader-nav" style="position:relative">
+    <button class="btn btn-ghost btn-sm" data-nav="home" style="gap:4px">
+      ← 返回首页
+    </button>
+    <div style="font-size:0.9rem;font-weight:600;color:var(--text-secondary)" id="story-chapter-title">
+      第一章 · 深夜的第七号车厢
+    </div>
+    <button class="btn btn-ghost btn-sm" data-nav="vocab-screen">词汇本</button>
+    <!-- Progress -->
+    <div class="reader-progress-bar progress-bar" style="height:3px">
+      <div class="progress-fill" id="story-progress" style="width:0%"></div>
+    </div>
+  </nav>
+
+  <!-- Body -->
+  <div class="reader-body z-1">
+    <div class="chapter-badge">
+      <div id="story-meta" class="flex gap-2 flex-wrap"></div>
+    </div>
+
+    <!-- Story title -->
+    <h2 class="chapter-title" style="font-family:var(--font-story)">深夜的第七号车厢</h2>
+
+    <!-- Hint -->
+    <div class="word-tip-hint">
+      <span>💡</span>
+      <span>点击金色高亮单词，查看词义提示。重点关注核心词含义，它将成为关键抉择的决策依据。</span>
+    </div>
+
+    <!-- Story content -->
+    <div id="story-content"></div>
+
+    <!-- Choice section -->
+    <div id="choice-section"></div>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║      SCREEN: VOCAB BOOK          ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="vocab-screen" class="screen">
+  <nav class="home-nav">
+    <button class="btn btn-ghost btn-sm" data-nav="home">← 返回</button>
+    <span style="font-weight:700">词汇本</span>
+    <span class="badge badge-gold" id="vocab-book-count">0 个词汇</span>
+  </nav>
+
+  <div class="vocab-header z-1">
+    <h2 style="margin-bottom:4px">我的词汇世界</h2>
+    <p>以下词汇均已在你的阅读故事中被唤醒。卡片按故事情节场景分类，帮你在大脑中建立场景化记忆网络。</p>
+  </div>
+
+  <div id="vocab-list" class="z-1"></div>
+</div>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║    SCREEN: PARENT REPORT (v0.3)  ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="parent-screen" class="screen">
+  <nav class="home-nav">
+    <button class="btn btn-ghost btn-sm" data-nav="home">← 返回</button>
+    <span style="font-weight:700; color: var(--accent-teal)">Curio 家长端效果报告</span>
+    <span class="badge badge-teal">高考专版</span>
+  </nav>
+
+  <div class="parent-container z-1">
+    <div class="parent-report-card">
+      <div class="parent-title-group">
+        <h2>高考英语阅读词汇激活简报</h2>
+        <p>数据生成时间: 2026-07-14 | 报告周期: 近30天</p>
+      </div>
+
+      <!-- Core metrics -->
+      <div class="report-stat-grid">
+        <div class="report-stat-item">
+          <div class="report-stat-num" id="parent-stat-words">--</div>
+          <div class="report-stat-label">阅读词汇激活数<br/>(在新语境中能识别)</div>
+        </div>
+        <div class="report-stat-item">
+          <div class="report-stat-num" id="parent-stat-accuracy">--</div>
+          <div class="report-stat-label">语境迁移正确率<br/>(排除猜测的理解力)</div>
+        </div>
+        <div class="report-stat-item">
+          <div class="report-stat-num" id="parent-stat-improvement">--</div>
+          <div class="report-stat-label">阅读词汇诊断提升<br/>(对比初始诊断基线)</div>
+        </div>
+      </div>
+
+      <!-- Detail rows -->
+      <div class="report-card-list">
+        <h3 style="font-size:0.95rem;color:var(--text-primary);margin-bottom:8px;border-bottom:1px solid var(--border-subtle);padding-bottom:8px">📈 高考词汇冲刺进度</h3>
+        <div class="report-detail-row">
+          <span class="text-secondary">目标词汇库</span>
+          <span class="text-primary">高考大纲核心词 (3500 词)</span>
+        </div>
+        <div class="report-detail-row">
+          <span class="text-secondary">当前覆盖进度</span>
+          <span class="text-primary" id="parent-stat-progress">--</span>
+        </div>
+        <div class="report-detail-row">
+          <span class="text-secondary">核心理解抉择正确率</span>
+          <span class="text-primary" id="parent-stat-choice-acc">--</span>
+        </div>
+        <div class="report-detail-row">
+          <span class="text-secondary">遗忘曲线复习触发率</span>
+          <span class="text-primary">8.5% (根据记忆算法智能防忘)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback / Sharing -->
+    <div class="sharing-cta-box">
+      <h3 style="font-size:1.05rem;color:var(--accent-purple);margin-bottom:8px">📤 协同监督提分</h3>
+      <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;margin-bottom:16px">
+        将此报告一键分享给学校英语老师或保存备份。老师可清晰了解孩子的课外真实阅读理解词汇量，以便精准指导。
+      </p>
+      <div class="flex gap-2 justify-center">
+        <button class="btn btn-secondary btn-sm" onclick="showToast('📋 报告链接已复制，可分享至微信/QQ！')">复制分享链接</button>
+        <button class="btn btn-primary btn-sm" style="background:var(--grad-gold); color:#1a1200" onclick="showToast('💾 报告长图已保存至相册！')">保存成绩长图</button>
+      </div>
+    </div>
+
+    <!-- Simulated Feedback (For testing user response) -->
+    <div class="glass-card mt-6" style="padding:20px; border-color:var(--border-gold)">
+      <h4 style="font-size:0.88rem;color:var(--accent-gold);margin-bottom:6px">🧪 内部测试反馈 (家长端验证)</h4>
+      <p style="font-size:0.78rem;color:var(--text-secondary);line-height:1.5;margin-bottom:12px">
+        您作为家长或英语老师，看到这份「高考英语阅读词汇激活简报」后，是否有清晰的进步感？是否愿意让孩子使用它？
+      </p>
+      <div class="flex gap-2">
+        <button class="btn btn-ghost btn-sm" style="border: 1px solid var(--border-subtle); font-size: 0.72rem" onclick="showToast('👍 感谢您的反馈！我们将继续优化图表展示。')">👍 数据很清晰，能看出进步</button>
+        <button class="btn btn-ghost btn-sm" style="border: 1px solid var(--border-subtle); font-size: 0.72rem" onclick="showToast('🙏 收到反馈！我们将在下个版本对齐更详细的试卷得分预估。')">💬 希望能关联到模拟卷得分</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js?v=4"></script>
+
+</body>
+</html>

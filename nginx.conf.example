@@ -1,0 +1,50 @@
+# ==============================================================================
+# Curio 生产环境 Nginx 反向代理与静态托管配置范例 (nginx.conf.example)
+# 将此文件复制到 /etc/nginx/sites-available/curio.conf 并建立 symlink 到 sites-enabled
+# ==============================================================================
+
+server {
+    listen 80;
+    server_name your-domain.com; # 替换为你的域名或公有云 VPS IP 地址
+
+    # 生产环境仅用于将 HTTP 重定向到 HTTPS；证书由下方 TLS server 配置。
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name your-domain.com;
+    ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+
+    # Gzip 压缩支持
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml;
+
+    # 1. 前端静态页面托管 (Vite 构建产物)
+    location / {
+        root /var/www/curio/apps/web/dist;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 2. 后端 Hono API 反向代理 (指向本地 5123 端口)
+    location /api/ {
+        proxy_pass http://127.0.0.1:5123/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # 静态资源长期缓存
+    location /assets/ {
+        root /var/www/curio/apps/web/dist;
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+    }
+}

@@ -1,0 +1,155 @@
+{
+  "audit_lock": {
+    "audit_id": "P0-B-2026-08-13",
+    "product_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+    "pipeline_evidence_sha256": "a6437b72d8bcadebb417bee65de3dd7d65806d402c6bc49c602f11a883ce9716",
+    "pipeline_sources_sha256": "e784bf54878268b98dd5ce3270e75015af616b18d4faf4d8d06103ce7cb9ff78",
+    "pipeline_code": {
+      "version": "no_git_commit_available; fixed_by_file_hash",
+      "build.py_sha256": "ae0aab4dc13d11362d412ace6353251fc1d145df8271df428728e3ce8f83564a",
+      "lexical.py_sha256": "3a5e6def80cf6ddf5c0256dd23cb4eabd6804d0a2a8582ef3156839c63b44d70",
+      "policy.py_sha256": "6f71478cb872943f446a2bff3d75e7245bec9d34f0e716ddba7c43738e03c453",
+      "ecdict.py_sha256": "a8ce5057499b09f1e9b37d4d2eefe9129cb3702cd5a120b435b03a2a55cb84fa",
+      "exam_corpus.py_sha256": "6a8622bfd7ab6887b0db3e95630bf37c47818ba00c6d0f70cce904da47cbcca3",
+      "pronunciation.py_sha256": "3015e55f582cba70e369efa093fb873f0a99ca05f880ca7ea607739f3772dd22"
+    },
+    "sources": {
+      "official_standard": {
+        "version": "2017 edition, 2020 revision",
+        "url": "https://www.pep.com.cn/xw/zt/rjwy/gzkb2020/202205/P020220517522153664167.pdf",
+        "sha256": "8ebd6bb12e9eb1c58e422ee01b540a4a71d2e681a4c4a764a36ee3a34b21c1be",
+        "license": "not_recorded",
+        "ownership_boundary": "used only to establish and check headword baseline; text and definitions are not copied; broader reuse rights unconfirmed"
+      },
+      "teacher_pdf": {
+        "version": "user-provided snapshot",
+        "url": "not_recorded",
+        "sha256": "88d179beca464e492c25a9a9fadbf50cb5310503f31b2ee57980f72d73a7f4d0",
+        "license": "not_recorded",
+        "ownership_boundary": "used as candidate headwords and selected Chinese glosses; authorization and upstream ownership unconfirmed"
+      },
+      "ipa_dict_en_us": {
+        "version": "upstream commit not recorded; fixed by file hash",
+        "url": "https://github.com/open-dict-data/ipa-dict",
+        "sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+        "license": "MIT",
+        "ownership_boundary": "en_US inventory is derived from CMUdict transformations; repository license does not replace CMUdict attribution"
+      },
+      "cmudict": {
+        "version": "upstream commit not recorded; fixed by file hash",
+        "url": "https://github.com/cmusphinx/cmudict",
+        "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+        "license": "BSD-style; exact notice must be retained",
+        "ownership_boundary": "pronunciation inventory and corroboration only"
+      },
+      "ecdict": {
+        "version": "upstream commit not recorded; fixed by file hash",
+        "url": "https://github.com/skywind3000/ECDICT",
+        "sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+        "license": "MIT repository license",
+        "ownership_boundary": "aggregated dictionary; repository license does not prove independent commercial clearance for every upstream fact"
+      },
+      "wordnet": {
+        "version": "Princeton WordNet 3.0",
+        "url": "https://wordnet.princeton.edu/license-and-commercial-use",
+        "license": "WordNet 3.0 License",
+        "license_sha256": "7731175a77952e259390b496fab905e57118b8d19ad3a8383c67eee724ff443f",
+        "ownership_boundary": "part-of-speech fallback only; current word_family is not a WordNet-derived field"
+      },
+      "gaokao_bench": {
+        "version": "git commit 6dbb24f8d8439041e5431c4c184a582182a6ce9c",
+        "url": "https://github.com/OpenLMLab/GAOKAO-Bench",
+        "license": "Apache-2.0",
+        "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "ownership_boundary": "30 available year-region English paper units from 2010-2022; not complete national and provincial coverage"
+      }
+    }
+  },
+  "original_sources_manifest": {
+    "official_standard": {
+      "title": "普通高中英语课程标准（2017年版2020年修订）",
+      "url": "https://www.pep.com.cn/xw/zt/rjwy/gzkb2020/202205/P020220517522153664167.pdf",
+      "pdf_file": "data/raw/official/ordinary-high-school-english-2020.pdf",
+      "pdf_sha256": "8ebd6bb12e9eb1c58e422ee01b540a4a71d2e681a4c4a764a36ee3a34b21c1be",
+      "extract_file": "data/raw/official/wordlist.txt",
+      "extract_sha256": "b17cf1387dc8c47b40f85e2c36c3dadd58541e2898391ab48f713a91c7ed96c5",
+      "parsed_unique_usable": 2988
+    },
+    "teacher_pdf_extract": {
+      "pdf_file": "data/raw/teacher/teacher-gaokao-3500.pdf",
+      "pdf_sha256": "88d179beca464e492c25a9a9fadbf50cb5310503f31b2ee57980f72d73a7f4d0",
+      "extract_file": "data/raw/teacher/wordlist.txt",
+      "extract_sha256": "bf665c068dda837a0b309ac21eb8f2a95700751d759004e9ceb01080535a438a",
+      "parsed_rows": 3929,
+      "duplicate_headwords": 34
+    },
+    "pronunciation_ipa": {
+      "url": "https://github.com/open-dict-data/ipa-dict",
+      "license": "MIT",
+      "file": "data/raw/pronunciation/ipa-en_US.txt",
+      "sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67"
+    },
+    "pronunciation_cmu": {
+      "url": "https://github.com/cmusphinx/cmudict",
+      "license": "BSD-style",
+      "file": "data/raw/pronunciation/cmudict.dict",
+      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22"
+    },
+    "ecdict": {
+      "url": "https://github.com/skywind3000/ECDICT",
+      "license": "MIT",
+      "file": "data/raw/ecdict/ecdict.csv",
+      "sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf"
+    },
+    "wordnet": {
+      "url": "https://wordnet.princeton.edu/license-and-commercial-use",
+      "directory": "data/raw/wordnet/WordNet-3.0/dict",
+      "license": "WordNet 3.0 license"
+    },
+    "gaokao_bench": {
+      "url": "https://github.com/OpenLMLab/GAOKAO-Bench",
+      "directory": "data/raw/exams/GAOKAO-Bench",
+      "license": "Apache-2.0",
+      "paper_count": 30,
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022"
+      ]
+    }
+  },
+  "audited_artifacts": {
+    "product_csv": {
+      "path": "/Users/shawn/Nexus/Curio/data/curio_gaokao_vocabulary.csv",
+      "sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+      "expected_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+      "exact_match": true
+    },
+    "production_db": {
+      "path": "/Users/shawn/Nexus/Curio/data/curio.db",
+      "sha256": "764752f8d044e1cb13f6683c33d65a52e70f3317b77146afa7ef5cfffa65690b",
+      "note": "database hash is runtime-snapshot-specific"
+    },
+    "evidence_snapshot": {
+      "path": "/Users/shawn/Nexus/Curio/data/audits/vocab-p0b/input/curio_gaokao_vocabulary_evidence.csv",
+      "sha256": "24db8cc381bab395d57110fc2ce98a1eade9c8979a197489b66b9f175b8063d0",
+      "row_count": 3500
+    },
+    "ecdict_selected_fields_snapshot": {
+      "path": "/Users/shawn/Nexus/Curio/data/audits/vocab-p0b/input/ecdict-selected-fields.csv",
+      "sha256": "68ff08bb8b38b5eeb255804b9c0b3ea13fc73c94dcbb49747c736294d9b4a0eb",
+      "row_count": 3500
+    }
+  },
+  "attribution_boundary": "Repository and data-package licenses do not prove that every aggregated upstream dictionary fact has independent commercial-use clearance."
+}

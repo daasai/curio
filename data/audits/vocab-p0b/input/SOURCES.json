@@ -1,0 +1,63 @@
+{
+  "official_standard": {
+    "title": "普通高中英语课程标准（2017年版2020年修订）",
+    "url": "https://www.pep.com.cn/xw/zt/rjwy/gzkb2020/202205/P020220517522153664167.pdf",
+    "pdf_file": "data/raw/official/ordinary-high-school-english-2020.pdf",
+    "pdf_sha256": "8ebd6bb12e9eb1c58e422ee01b540a4a71d2e681a4c4a764a36ee3a34b21c1be",
+    "extract_file": "data/raw/official/wordlist.txt",
+    "extract_sha256": "b17cf1387dc8c47b40f85e2c36c3dadd58541e2898391ab48f713a91c7ed96c5",
+    "parsed_unique_usable": 2988
+  },
+  "teacher_pdf_extract": {
+    "pdf_file": "data/raw/teacher/teacher-gaokao-3500.pdf",
+    "pdf_sha256": "88d179beca464e492c25a9a9fadbf50cb5310503f31b2ee57980f72d73a7f4d0",
+    "extract_file": "data/raw/teacher/wordlist.txt",
+    "extract_sha256": "bf665c068dda837a0b309ac21eb8f2a95700751d759004e9ceb01080535a438a",
+    "parsed_rows": 3929,
+    "duplicate_headwords": 34
+  },
+  "pronunciation_ipa": {
+    "url": "https://github.com/open-dict-data/ipa-dict",
+    "license": "MIT",
+    "file": "data/raw/pronunciation/ipa-en_US.txt",
+    "sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67"
+  },
+  "pronunciation_cmu": {
+    "url": "https://github.com/cmusphinx/cmudict",
+    "license": "BSD-style",
+    "file": "data/raw/pronunciation/cmudict.dict",
+    "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22"
+  },
+  "ecdict": {
+    "url": "https://github.com/skywind3000/ECDICT",
+    "license": "MIT",
+    "file": "data/raw/ecdict/ecdict.csv",
+    "sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf"
+  },
+  "wordnet": {
+    "url": "https://wordnet.princeton.edu/license-and-commercial-use",
+    "directory": "data/raw/wordnet/WordNet-3.0/dict",
+    "license": "WordNet 3.0 license"
+  },
+  "gaokao_bench": {
+    "url": "https://github.com/OpenLMLab/GAOKAO-Bench",
+    "directory": "data/raw/exams/GAOKAO-Bench",
+    "license": "Apache-2.0",
+    "paper_count": 30,
+    "years": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+    ]
+  }
+}
