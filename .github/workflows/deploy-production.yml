@@ -1,0 +1,83 @@
+name: Deploy production
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: Configure SSH
+        env:
+          DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+          DEPLOY_SSH_KNOWN_HOSTS: ${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}
+        run: |
+          test -n "$DEPLOY_SSH_PRIVATE_KEY"
+          test -n "$DEPLOY_SSH_KNOWN_HOSTS"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$DEPLOY_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Validate deployment configuration
+        env:
+          DEPLOY_SSH_HOST: ${{ vars.DEPLOY_SSH_HOST }}
+          DEPLOY_SSH_USER: ${{ vars.DEPLOY_SSH_USER }}
+          DEPLOY_SSH_PORT: ${{ vars.DEPLOY_SSH_PORT }}
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+          DEPLOY_BUN_BIN: ${{ vars.DEPLOY_BUN_BIN }}
+        run: |
+          test -n "$DEPLOY_SSH_HOST"
+          test -n "$DEPLOY_SSH_USER"
+          test -n "$DEPLOY_SSH_PORT"
+          test -n "$DEPLOY_TARGET"
+          test -n "$DEPLOY_BUN_BIN"
+      - name: Back up remote database and release files
+        env:
+          DEPLOY_SSH_HOST: ${{ vars.DEPLOY_SSH_HOST }}
+          DEPLOY_SSH_USER: ${{ vars.DEPLOY_SSH_USER }}
+          DEPLOY_SSH_PORT: ${{ vars.DEPLOY_SSH_PORT }}
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+          DEPLOY_BUN_BIN: ${{ vars.DEPLOY_BUN_BIN }}
+          RELEASE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p "$DEPLOY_SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes "$DEPLOY_SSH_USER@$DEPLOY_SSH_HOST" \
+            "cd '$DEPLOY_TARGET' && test -f .env && test -f data/curio.db && '$DEPLOY_BUN_BIN' scripts/backup-db.ts && mkdir -p .deploy-backups/'$RELEASE_SHA' && rsync -a --exclude=.git/ --exclude=.env --exclude='.env.*' --exclude=data/ --exclude=node_modules/ --exclude=.deploy-backups/ ./ .deploy-backups/'$RELEASE_SHA'/"
+      - name: Synchronize code without secrets or data
+        env:
+          DEPLOY_SSH_HOST: ${{ vars.DEPLOY_SSH_HOST }}
+          DEPLOY_SSH_USER: ${{ vars.DEPLOY_SSH_USER }}
+          DEPLOY_SSH_PORT: ${{ vars.DEPLOY_SSH_PORT }}
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+        run: |
+          export RSYNC_RSH="ssh -i ~/.ssh/id_ed25519 -p $DEPLOY_SSH_PORT -o BatchMode=yes -o StrictHostKeyChecking=yes"
+          scripts/sync-deploy.sh "$DEPLOY_SSH_USER@$DEPLOY_SSH_HOST:$DEPLOY_TARGET" --apply
+      - name: Run controlled remote deployment and verify health
+        env:
+          DEPLOY_SSH_HOST: ${{ vars.DEPLOY_SSH_HOST }}
+          DEPLOY_SSH_USER: ${{ vars.DEPLOY_SSH_USER }}
+          DEPLOY_SSH_PORT: ${{ vars.DEPLOY_SSH_PORT }}
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+          DEPLOY_BUN_BIN: ${{ vars.DEPLOY_BUN_BIN }}
+          RELEASE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p "$DEPLOY_SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes "$DEPLOY_SSH_USER@$DEPLOY_SSH_HOST" \
+            "cd '$DEPLOY_TARGET' && BUN_BIN='$DEPLOY_BUN_BIN' ./deploy.sh && printf '%s\n' '$RELEASE_SHA' > .deploy-last-successful-sha"

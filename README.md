@@ -185,6 +185,10 @@ npm run quality:check
 
 完整检查包括凭据泄露扫描、前端构建、隔离 API 测试、内容校验和 Playwright 测试。运行浏览器测试前，请确保本机已具备 Playwright 所需浏览器环境。
 
+## GitHub CI 与受控部署
+
+仓库在 PR 和 `main` 推送时自动运行 CI。只有 `main` 的 CI 成功后，GitHub 才会创建 `production` 部署并等待人工批准；生产密钥只配置在该 Environment 中。完整的 GitHub 配置、服务器前置条件和恢复边界见 [受控部署说明](docs/operations/github-actions-controlled-deploy.md)。
+
 ## 目录概览
 
 ```text
