@@ -18,7 +18,9 @@ describe("vocabulary provenance audit", () => {
     expect(summary.status).toBe("PASS_WITH_DISCLOSED_LIMITATIONS");
     expect(summary.product_rows).toBe(3500);
     expect(summary.conflicts.total).toBe(0);
-    expect(summary.word_family.current_nonempty).toBe(189);
+    expect(summary.word_family.current_nonempty).toBe(174);
+    expect(summary.word_family.current_members).toBe(180);
+    expect(summary.controlled_update_applies).toBe(true);
     expect(summary.ecdict_actual_use.pos_selected_rows).toBe(3296);
     expect(Bun.hash(await Bun.file("data/curio_gaokao_vocabulary.csv").arrayBuffer())).toBe(beforeCsv);
     expect(Bun.hash(await Bun.file("data/curio.db").arrayBuffer())).toBe(beforeDb);

@@ -682,6 +682,18 @@ const PreferencesStage: React.FC = () => {
 const ReadyStage: React.FC = () => {
   const { preferences, completeOnboarding, showToast } = useAppStore();
   const [pct, setPct] = useState(0);
+  const [saveFailed, setSaveFailed] = useState(false);
+
+  const finishOnboarding = async () => {
+    setSaveFailed(false);
+    const saved = await completeOnboarding();
+    if (!saved) {
+      setSaveFailed(true);
+      showToast('初始档案尚未保存，请检查网络后重试');
+      return;
+    }
+    showToast('🎉 故事世界生成完毕！进入首页');
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -689,9 +701,7 @@ const ReadyStage: React.FC = () => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
-            void completeOnboarding().then((saved) => {
-              showToast(saved ? '🎉 故事世界生成完毕！进入首页' : '初始档案尚未保存，请检查网络后重试');
-            });
+            void finishOnboarding();
           }, 400);
           return 100;
         }
@@ -715,6 +725,14 @@ const ReadyStage: React.FC = () => {
       <div className="progress-bar w-full" style={{ height: '4px', maxWidth: '280px', marginTop: '10px' }}>
         <div className="progress-fill" style={{ width: `${pct}%` }}></div>
       </div>
+      {saveFailed && (
+        <div className="flex flex-col items-center gap-3" role="alert">
+          <p className="text-secondary" style={{ fontSize: '0.85rem', margin: 0 }}>初始档案暂未同步成功。</p>
+          <button className="btn btn-primary" onClick={() => void finishOnboarding()}>
+            重试保存并进入首页
+          </button>
+        </div>
+      )}
     </div>
   );
 };

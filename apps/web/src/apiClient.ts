@@ -74,11 +74,18 @@ export async function saveOnboardingApi(data: {
   preferences: { genres: string[]; intensity: 'light' | 'medium' | 'deep' };
   diagnostic: { itemSetVersion: string; correctCount: number; itemCount: number; derivedLevel: string };
 }) {
-  return apiFetch<{ success?: boolean; idempotent?: boolean; error?: { code: string } }>('/learning/onboarding', {
-    method: 'POST',
-    credentials: 'include',
-    body: JSON.stringify(data),
-  });
+  try {
+    const res = await fetch(`${API_BASE}/learning/onboarding`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(data),
+    });
+    return await res.json() as { success?: boolean; idempotent?: boolean; error?: { code: string } };
+  } catch (err) {
+    console.warn('Onboarding save network error:', err);
+    return null;
+  }
 }
 
 // Learning snapshot & session APIs

@@ -9,7 +9,7 @@ fi
 
 target="$1"
 mode="${2:-}"
-if [[ "$target" != *@*:*/* ]] || [[ "$target" == *":/" ]]; then
+if [[ "$target" != *:*/* ]] || [[ "$target" == *":/" ]]; then
   echo "❌ 目标必须是明确的远程项目目录，不能是服务器根目录。"
   exit 2
 fi

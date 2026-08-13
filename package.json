@@ -20,6 +20,8 @@
     "test:content": "bun scripts/verify-content-and-vocab.ts",
     "audit:vocab": "bun scripts/audit-vocab-provenance.ts",
     "test:vocab-audit": "bun test scripts/audit-vocab-provenance.test.ts",
+    "vocab:apply-manual-decisions": "bun scripts/apply-word-family-manual-decisions.ts",
+    "test:vocab-manual-decisions": "bun test scripts/apply-word-family-manual-decisions.test.ts",
     "test:credential-safety": "bun scripts/verify-credential-safety.ts",
     "repair:content-contract": "bun scripts/repair-p1-content-contract.ts",
     "test:e2e": "playwright test",

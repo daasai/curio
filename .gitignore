@@ -18,6 +18,7 @@ build
 /data/*.db
 /data/*.db-*
 /data/backups/
+/data/audits/**/before/*.db
 
 # Local tooling and test artifacts
 /.agents/

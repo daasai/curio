@@ -1,6 +1,6 @@
 {
   "audit_id": "P0-B-2026-08-13",
-  "product_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+  "product_sha256": "f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed",
   "pipeline_evidence_sha256": "a6437b72d8bcadebb417bee65de3dd7d65806d402c6bc49c602f11a883ce9716",
   "pipeline_sources_sha256": "e784bf54878268b98dd5ce3270e75015af616b18d4faf4d8d06103ce7cb9ff78",
   "pipeline_code": {
@@ -62,5 +62,19 @@
       "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "ownership_boundary": "30 available year-region English paper units from 2010-2022; not complete national and provincial coverage"
     }
-  }
+  },
+  "historical_product_baseline": {
+    "sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+    "note": "P0-B formal audit baseline; retained unchanged after controlled update."
+  },
+  "controlled_updates": [
+    {
+      "update_id": "P0-B-WFMR-2026-08-13",
+      "decision_csv_sha256": "5d19c605dac2ea44f16fa2a8509bf3b859c9f89e279544d2cb51a61b9ec5cc85",
+      "baseline_csv_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+      "current_csv_sha256": "f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed",
+      "audit_manifest": "data/audits/vocab-p0b/controlled-updates/2026-08-13-word-family-manual-review/manifest.json",
+      "scope": "25 approved relationship decisions only; 118 auto_fill_candidate items untouched"
+    }
+  ]
 }

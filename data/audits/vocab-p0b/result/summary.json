@@ -1,12 +1,14 @@
 {
   "status": "PASS_WITH_DISCLOSED_LIMITATIONS",
-  "generated_at": "2026-08-13T01:42:10.379Z",
+  "generated_at": "2026-08-13T09:48:15.016Z",
   "product_rows": 3500,
   "unique_words": 3500,
   "database_rows": 3500,
-  "csv_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
-  "expected_product_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
-  "exact_pipeline_product_match": true,
+  "csv_sha256": "f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed",
+  "expected_product_sha256": "f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed",
+  "historical_product_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+  "exact_pipeline_product_match": false,
+  "controlled_update_applies": true,
   "evidence_applies_to_product": true,
   "fields": [
     {
@@ -66,13 +68,13 @@
     },
     {
       "field": "word_family",
-      "nonempty": 189,
-      "empty": 3311,
+      "nonempty": 174,
+      "empty": 3326,
       "format_anomalies": 0,
       "placeholders": 0,
       "csv_db_conflicts": 0,
-      "trace_confirmed": 0,
-      "trace_partial": 3500,
+      "trace_confirmed": 50,
+      "trace_partial": 3450,
       "trace_unavailable": 0
     },
     {
@@ -94,13 +96,13 @@
   "suspected_placeholders": 0,
   "low_specificity_generated_tags": 3301,
   "word_family": {
-    "current_nonempty": 189,
-    "current_members": 196,
+    "current_nonempty": 174,
+    "current_members": 180,
     "classification_counts": {
-      "auto_fill_candidate": 118,
-      "manual_review": 40,
+      "auto_fill_candidate": 121,
+      "manual_review": 20,
       "reliable_value": 157,
-      "should_not_fill": 3185
+      "should_not_fill": 3202
     },
     "warning": "auto_fill_candidate means a machine-generated review candidate; this audit never writes it to the product vocabulary"
   },

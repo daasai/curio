@@ -1,0 +1,81 @@
+{
+  "update_id": "P0-B-WFMR-2026-08-13",
+  "mode": "apply",
+  "decision_source": {
+    "path": "data/audits/vocab-p0b/review/word-family-manual-decisions.csv",
+    "sha256": "5d19c605dac2ea44f16fa2a8509bf3b859c9f89e279544d2cb51a61b9ec5cc85",
+    "decisions": 25
+  },
+  "baseline": {
+    "csv_sha256": "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022",
+    "db_sha256": "4d64447d65fa2c4a0dd11acd019238bb4fa463859e3747f4f70759525e349359",
+    "nonempty_heads": 189,
+    "members": 196
+  },
+  "result": {
+    "csv_sha256": "f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed",
+    "nonempty_heads": 174,
+    "members": 180,
+    "changed_words": 43
+  },
+  "scope": {
+    "approved_words": [
+      "apart",
+      "apartment",
+      "bare",
+      "barely",
+      "base",
+      "basement",
+      "can",
+      "confuse",
+      "confused",
+      "could",
+      "count",
+      "cover",
+      "discount",
+      "discover",
+      "disease",
+      "dismiss",
+      "display",
+      "ease",
+      "fee",
+      "feed",
+      "hard",
+      "hardly",
+      "interest",
+      "interesting",
+      "late",
+      "lately",
+      "less",
+      "life",
+      "like",
+      "likely",
+      "live",
+      "lively",
+      "miss",
+      "most",
+      "mostly",
+      "near",
+      "nearly",
+      "paint",
+      "painting",
+      "play",
+      "short",
+      "shortly",
+      "tire",
+      "tired",
+      "train",
+      "training",
+      "unless",
+      "unlike",
+      "will",
+      "willing"
+    ],
+    "auto_fill_candidates_untouched": 118,
+    "rejected_decisions_no_change": 2
+  },
+  "rollback": {
+    "csv": "restore before/curio_gaokao_vocabulary.csv, then run npm run db:seed",
+    "database": "restore before/curio.db only if rollback is required; it may contain local business data and remains local-only"
+  }
+}

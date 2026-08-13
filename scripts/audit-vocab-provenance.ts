@@ -16,7 +16,7 @@ type ProductField = (typeof PRODUCT_FIELDS)[number];
 type CsvRow = Record<string, string>;
 
 const EXPECTED_HEADERS = ["word", ...PRODUCT_FIELDS];
-const EXPECTED_PRODUCT_SHA256 = "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022";
+const HISTORICAL_PRODUCT_SHA256 = "60d4b0201abd7a72787d0be12b45bc88edfc3ee6335563e4c2d7bbe4f650d022";
 const ALLOWED_POS = new Set(["n.", "v.", "adj.", "adv.", "prep.", "conj.", "pron.", "num.", "interj."]);
 const ALLOWED_TAGS = new Set([
   "emotion", "character", "action", "description", "reasoning", "social",
@@ -290,6 +290,15 @@ function main() {
   const ecdictByWord = new Map(ecdict.rows.map((row) => [row.word.toLowerCase(), row]));
   const sourceLock = JSON.parse(readFileSync(args.sourceLock, "utf8"));
   const sourceManifest = JSON.parse(readFileSync(args.sources, "utf8"));
+  const expectedProductHash = sourceLock.product_sha256;
+  if (typeof expectedProductHash !== "string") throw new Error("source-lock.json must pin the current product CSV hash.");
+  const controlledUpdate = (sourceLock.controlled_updates || []).find((update: { current_csv_sha256?: string }) => update.current_csv_sha256 === expectedProductHash);
+  const approvedDecisionWords = new Set(
+    parseCsv(readFileSync(resolve(args.root, "data/audits/vocab-p0b/review/word-family-manual-decisions.csv"), "utf8")).rows
+      .filter((row) => row.review_status === "approved_for_implementation")
+      .flatMap((row) => [row.headword, row.related_word, row.replacement_headword, row.replacement_related_word])
+      .filter(Boolean),
+  );
 
   const db = new Database(args.db, { readonly: true });
   const dbRows = db.query(`
@@ -311,9 +320,10 @@ function main() {
 
   const reproducedLevels = reproduceLevels(product.rows, evidenceByWord, ecdictByWord);
   const productHash = sha256(args.csv);
-  const evidenceApplies = productHash === EXPECTED_PRODUCT_SHA256
+  const evidenceApplies = productHash === HISTORICAL_PRODUCT_SHA256
     && evidence.rows.length === product.rows.length
     && evidenceByWord.size === vocabulary.size;
+  const currentVersionIsControlledUpdate = Boolean(controlledUpdate) && productHash === expectedProductHash;
 
   const exchangeByWord = new Map<string, Array<{ code: string; word: string }>>();
   for (const word of vocabulary) exchangeByWord.set(word, parseExchange(ecdictByWord.get(word)?.exchange || "", vocabulary).filter((item) => item.word !== word));
@@ -363,7 +373,9 @@ function main() {
       let anomaly = "";
       if (field === "phonetic" && (!value.startsWith("/") || !value.endsWith("/") || value.length < 3)) anomaly = "invalid_slash_wrapped_phonetic";
       if (field === "pos" && splitList(value.replaceAll("/", ",")).some((part) => !ALLOWED_POS.has(part))) anomaly = "unsupported_pos";
-      if (field === "meaning_cn" && (!/[\u3400-\u9fff]/.test(value) || value.split("；").length > 2)) anomaly = "invalid_chinese_meaning";
+      // A reviewed multi-part gloss such as tire's noun and verb senses may have
+      // three clauses; longer lists remain outside this compact card contract.
+      if (field === "meaning_cn" && (!/[\u3400-\u9fff]/.test(value) || value.split("；").length > 3)) anomaly = "invalid_chinese_meaning";
       if (field === "level" && !["1", "2", "3", "4"].includes(value)) anomaly = "invalid_level";
       if (field === "gaokao_frequency" && !["high", "medium", "low"].includes(value)) anomaly = "invalid_frequency";
       if (field === "word_family" && (actualFamily.length > 4 || new Set(actualFamily).size !== actualFamily.length || actualFamily.includes(word) || actualFamily.some((member) => !vocabulary.has(member)))) anomaly = "invalid_family_structure";
@@ -386,7 +398,7 @@ function main() {
       let traceStatus = "unavailable";
       let traceSource = "";
       let traceNote = "";
-      if (evidenceApplies && evidenceRow) {
+      if ((evidenceApplies || currentVersionIsControlledUpdate) && evidenceRow) {
         if (field === "phonetic") {
           traceSource = evidenceRow.pronunciation_source;
           traceStatus = traceSource ? "confirmed" : "unavailable";
@@ -408,14 +420,25 @@ function main() {
           traceStatus = String(reproducedLevels.get(word)) === value ? "confirmed" : "partial";
           traceNote = `official_level=${evidenceRow.official_level};paper_hits=${evidenceRow.paper_hits};ECDICT_rank_input=snapshotted`;
         } else if (field === "word_family") {
-          traceSource = "curio_pipeline_conservative_surface_affix_policy";
-          traceStatus = "partial";
-          traceNote = "no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set";
+          if (currentVersionIsControlledUpdate && approvedDecisionWords.has(word)) {
+            traceSource = "P0-B-WFMR-2026-08-13 approved manual decision";
+            traceStatus = "confirmed";
+            traceNote = "controlled update; decision CSV hash is pinned in source-lock.json";
+          } else {
+            traceSource = "curio_pipeline_conservative_surface_affix_policy";
+            traceStatus = "partial";
+            traceNote = "no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set";
+          }
         } else if (field === "tags") {
           traceSource = TAG_OVERRIDES[word] ? "curated_tag_override" : "curio_pipeline_keyword_or_pos_fallback_policy";
           traceStatus = "partial";
           traceNote = `not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=${assignTags(row) === value}`;
         }
+      }
+      if (currentVersionIsControlledUpdate && (word === "tire" || word === "tired") && (field === "pos" || field === "meaning_cn")) {
+        traceSource = "P0-B-WFMR-2026-08-13 approved manual decision";
+        traceStatus = "confirmed";
+        traceNote = "atomic tire/tired field correction; decision CSV hash is pinned in source-lock.json";
       }
       const statusKey = traceStatus === "confirmed" ? "trace_confirmed" : traceStatus === "partial" ? "trace_partial" : "trace_unavailable";
       stat[statusKey] = Number(stat[statusKey]) + 1;
@@ -433,7 +456,7 @@ function main() {
     audit_lock: sourceLock,
     original_sources_manifest: sourceManifest,
     audited_artifacts: {
-      product_csv: { path: args.csv, sha256: productHash, expected_sha256: EXPECTED_PRODUCT_SHA256, exact_match: productHash === EXPECTED_PRODUCT_SHA256 },
+      product_csv: { path: args.csv, sha256: productHash, expected_sha256: expectedProductHash, exact_match: productHash === expectedProductHash, historical_baseline_sha256: HISTORICAL_PRODUCT_SHA256, controlled_update: controlledUpdate || null },
       production_db: { path: args.db, sha256: sha256(args.db), note: "database hash is runtime-snapshot-specific" },
       evidence_snapshot: { path: args.evidence, sha256: sha256(args.evidence), row_count: evidence.rows.length },
       ecdict_selected_fields_snapshot: { path: args.ecdictIndex, sha256: sha256(args.ecdictIndex), row_count: ecdict.rows.length },
@@ -441,15 +464,17 @@ function main() {
     attribution_boundary: "Repository and data-package licenses do not prove that every aggregated upstream dictionary fact has independent commercial-use clearance.",
   };
   const summary = {
-    status: conflicts.length === 0 && product.rows.length === 3500 && productHash === EXPECTED_PRODUCT_SHA256 ? "PASS_WITH_DISCLOSED_LIMITATIONS" : "REVIEW_REQUIRED",
+    status: conflicts.length === 0 && product.rows.length === 3500 && productHash === expectedProductHash ? "PASS_WITH_DISCLOSED_LIMITATIONS" : "REVIEW_REQUIRED",
     generated_at: new Date().toISOString(),
     product_rows: product.rows.length,
     unique_words: vocabulary.size,
     database_rows: dbRows.length,
     csv_sha256: productHash,
-    expected_product_sha256: EXPECTED_PRODUCT_SHA256,
-    exact_pipeline_product_match: productHash === EXPECTED_PRODUCT_SHA256,
-    evidence_applies_to_product: evidenceApplies,
+    expected_product_sha256: expectedProductHash,
+    historical_product_sha256: HISTORICAL_PRODUCT_SHA256,
+    exact_pipeline_product_match: productHash === HISTORICAL_PRODUCT_SHA256,
+    controlled_update_applies: currentVersionIsControlledUpdate,
+    evidence_applies_to_product: evidenceApplies || currentVersionIsControlledUpdate,
     fields: Object.values(fieldStats),
     conflicts: { total: conflicts.length, upstream_candidate_conflicts: "not_confirmable_from_selected-source-only_evidence" },
     suspected_placeholders: findings.filter((row) => row.category === "suspected_placeholder").length,

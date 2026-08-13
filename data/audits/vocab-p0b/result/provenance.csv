@@ -1222,14 +1222,14 @@ apart,pos,adj./adv.,confirmed,ECDICT,
 apart,meaning_cn,分离；相距,confirmed,teacher_pdf_gloss,
 apart,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=5;ECDICT_rank_input=snapshotted
 apart,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=5;scope=historical_partial_2010_2022
-apart,word_family,apartment,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+apart,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 apart,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 apartment,phonetic,/əˈpɑrtmənt/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 apartment,pos,n.,confirmed,ECDICT,
 apartment,meaning_cn,房间；公寓,confirmed,teacher_pdf_gloss,
 apartment,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=required;paper_hits=2;ECDICT_rank_input=snapshotted
 apartment,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=2;scope=historical_partial_2010_2022
-apartment,word_family,apart,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+apartment,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 apartment,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 apologize,phonetic,/əˈpɑləˌdʒaɪz/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 apologize,pos,v.,confirmed,ECDICT,
@@ -2111,14 +2111,14 @@ bare,pos,v./adj.,confirmed,ECDICT,
 bare,meaning_cn,赤裸的；空的,confirmed,teacher_pdf_gloss,
 bare,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=0;ECDICT_rank_input=snapshotted
 bare,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=0;scope=historical_partial_2010_2022
-bare,word_family,barely,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+bare,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 bare,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 barely,phonetic,/ˈbɛrli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 barely,pos,adv.,confirmed,ECDICT,
 barely,meaning_cn,几乎不,confirmed,ECDICT,
 barely,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=0;ECDICT_rank_input=snapshotted
 barely,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=0;scope=historical_partial_2010_2022
-barely,word_family,bare,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+barely,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 barely,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 bark,phonetic,/ˈbɑrk/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 bark,pos,n./v.,confirmed,ECDICT,
@@ -2139,7 +2139,7 @@ base,pos,n./v./adj.,confirmed,ECDICT,
 base,meaning_cn,根据地；垒,confirmed,teacher_pdf_gloss,
 base,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=required;paper_hits=7;ECDICT_rank_input=snapshotted
 base,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=7;scope=historical_partial_2010_2022
-base,word_family,basement,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+base,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 base,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 baseball,phonetic,/ˈbeɪsˈbɔl/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 baseball,pos,n.,confirmed,ECDICT,
@@ -2153,7 +2153,7 @@ basement,pos,n.,confirmed,ECDICT,
 basement,meaning_cn,地下室,confirmed,teacher_pdf_gloss,
 basement,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=1;ECDICT_rank_input=snapshotted
 basement,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=1;scope=historical_partial_2010_2022
-basement,word_family,base,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+basement,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 basement,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 basic,phonetic,/ˈbeɪsɪk/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 basic,pos,n./adj.,confirmed,ECDICT,
@@ -3462,7 +3462,7 @@ can,pos,n./v.,confirmed,ECDICT,
 can,meaning_cn,能；可以,confirmed,curated_override,
 can,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=30;ECDICT_rank_input=snapshotted
 can,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=30;scope=historical_partial_2010_2022
-can,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+can,word_family,could,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 can,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 canada,phonetic,/ˈkænədə/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 canada,pos,n.,confirmed,ECDICT,
@@ -5009,14 +5009,14 @@ confuse,pos,v.,confirmed,ECDICT,
 confuse,meaning_cn,使迷惑；混淆,confirmed,teacher_pdf_gloss,
 confuse,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=0;ECDICT_rank_input=snapshotted
 confuse,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=0;scope=historical_partial_2010_2022
-confuse,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+confuse,word_family,confused,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 confuse,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 confused,phonetic,/kənˈfjuzd/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 confused,pos,adj.,confirmed,ECDICT,
 confused,meaning_cn,困惑的；混乱的,confirmed,ECDICT,
 confused,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=4;ECDICT_rank_input=snapshotted
 confused,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=4;scope=historical_partial_2010_2022
-confused,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+confused,word_family,confuse,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 confused,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 congratulation,phonetic,/kənˌɡrætʃəˈleɪʃən/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 congratulation,pos,n.,confirmed,ECDICT,
@@ -5436,7 +5436,7 @@ could,pos,v.,confirmed,curated_modal_verbs,
 could,meaning_cn,可以；能,confirmed,ECDICT,
 could,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=27;ECDICT_rank_input=snapshotted
 could,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=27;scope=historical_partial_2010_2022
-could,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+could,word_family,can,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 could,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 council,phonetic,/ˈkaʊnsəl/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 council,pos,n.,confirmed,ECDICT,
@@ -5450,7 +5450,7 @@ count,pos,n./v.,confirmed,ECDICT,
 count,meaning_cn,数；点数,confirmed,teacher_pdf_gloss,
 count,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=5;ECDICT_rank_input=snapshotted
 count,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=5;scope=historical_partial_2010_2022
-count,word_family,discount,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+count,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 count,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 counter,phonetic,/ˈkaʊntɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 counter,pos,n./adj./adv.,confirmed,ECDICT,
@@ -5520,7 +5520,7 @@ cover,pos,n./v.,confirmed,ECDICT,
 cover,meaning_cn,盖子；罩,confirmed,teacher_pdf_gloss,
 cover,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=12;ECDICT_rank_input=snapshotted
 cover,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=12;scope=historical_partial_2010_2022
-cover,word_family,discover,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+cover,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 cover,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 coverage,phonetic,/ˈkəvɝədʒ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 coverage,pos,n.,confirmed,ECDICT,
@@ -6640,7 +6640,7 @@ discount,pos,n./v.,confirmed,ECDICT,
 discount,meaning_cn,折扣,confirmed,teacher_pdf_gloss,
 discount,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=4;ECDICT_rank_input=snapshotted
 discount,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=4;scope=historical_partial_2010_2022
-discount,word_family,count,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+discount,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 discount,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 discourage,phonetic,/dɪˈskɝɪdʒ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 discourage,pos,v.,confirmed,ECDICT,
@@ -6654,7 +6654,7 @@ discover,pos,v.,confirmed,ECDICT,
 discover,meaning_cn,发现,confirmed,teacher_pdf_gloss,
 discover,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=20;ECDICT_rank_input=snapshotted
 discover,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=20;scope=historical_partial_2010_2022
-discover,word_family,cover,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+discover,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 discover,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 discovery,phonetic,/ˌdɪsˈkəvri/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 discovery,pos,n.,confirmed,ECDICT,
@@ -6689,7 +6689,7 @@ disease,pos,n.,confirmed,ECDICT,
 disease,meaning_cn,病；疾病,confirmed,teacher_pdf_gloss,
 disease,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=required;paper_hits=7;ECDICT_rank_input=snapshotted
 disease,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=7;scope=historical_partial_2010_2022
-disease,word_family,ease,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+disease,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 disease,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 dish,phonetic,/ˈdɪʃ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 dish,pos,n.,confirmed,ECDICT,
@@ -6710,14 +6710,14 @@ dismiss,pos,v.,confirmed,ECDICT,
 dismiss,meaning_cn,让；离开,confirmed,teacher_pdf_gloss,
 dismiss,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=1;ECDICT_rank_input=snapshotted
 dismiss,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=1;scope=historical_partial_2010_2022
-dismiss,word_family,miss,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+dismiss,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 dismiss,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 display,phonetic,/dɪsˈpleɪ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 display,pos,n./v.,confirmed,ECDICT,
 display,meaning_cn,显示；陈列,confirmed,ECDICT,
 display,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=0;ECDICT_rank_input=snapshotted
 display,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=0;scope=historical_partial_2010_2022
-display,word_family,play,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+display,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 display,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 distance,phonetic,/ˈdɪstəns/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 distance,pos,n.,confirmed,ECDICT,
@@ -7249,7 +7249,7 @@ ease,pos,n./v.,confirmed,ECDICT,
 ease,meaning_cn,减轻；缓解,confirmed,teacher_pdf_gloss,
 ease,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=0;ECDICT_rank_input=snapshotted
 ease,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=0;scope=historical_partial_2010_2022
-ease,word_family,disease,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+ease,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 ease,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 easily,phonetic,/ˈizəli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 easily,pos,adv.,confirmed,ECDICT,
@@ -8656,14 +8656,14 @@ fee,pos,n./v.,confirmed,ECDICT,
 fee,meaning_cn,费；费用,confirmed,teacher_pdf_gloss,
 fee,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=1;ECDICT_rank_input=snapshotted
 fee,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=1;scope=historical_partial_2010_2022
-fee,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+fee,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 fee,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 feed,phonetic,/ˈfid/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 feed,pos,n./v.,confirmed,ECDICT,
 feed,meaning_cn,喂；饲,confirmed,teacher_pdf_gloss,
 feed,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=6;ECDICT_rank_input=snapshotted
 feed,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=6;scope=historical_partial_2010_2022
-feed,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+feed,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 feed,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 feel,phonetic,/ˈfil/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 feel,pos,n./v.,confirmed,ECDICT,
@@ -10427,14 +10427,14 @@ hard,pos,adj./adv.,confirmed,ECDICT,
 hard,meaning_cn,坚硬的；硬的,confirmed,ECDICT,
 hard,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=19;ECDICT_rank_input=snapshotted
 hard,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=19;scope=historical_partial_2010_2022
-hard,word_family,hardly,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+hard,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 hard,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 hardly,phonetic,/ˈhɑrdli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 hardly,pos,adv.,confirmed,ECDICT,
 hardly,meaning_cn,几乎不,confirmed,teacher_pdf_gloss,
 hardly,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=9;ECDICT_rank_input=snapshotted
 hardly,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=9;scope=historical_partial_2010_2022
-hardly,word_family,hard,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+hardly,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 hardly,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 harm,phonetic,/ˈhɑrm/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 harm,pos,n./v.,confirmed,ECDICT,
@@ -11722,14 +11722,14 @@ interest,pos,n./v.,confirmed,ECDICT,
 interest,meaning_cn,兴趣；利息,confirmed,teacher_pdf_gloss,
 interest,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=19;ECDICT_rank_input=snapshotted
 interest,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=19;scope=historical_partial_2010_2022
-interest,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+interest,word_family,interesting,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 interest,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 interesting,phonetic,/ˈɪntɝəstɪŋ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 interesting,pos,adj.,confirmed,ECDICT,
 interesting,meaning_cn,有趣的,confirmed,teacher_pdf_gloss,
 interesting,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=14;ECDICT_rank_input=snapshotted
 interesting,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=14;scope=historical_partial_2010_2022
-interesting,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+interesting,word_family,interest,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 interesting,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 internal,phonetic,/ˌɪnˈtɝnəl/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 internal,pos,adj.,confirmed,ECDICT,
@@ -12443,14 +12443,14 @@ late,pos,adj./adv.,confirmed,ECDICT,
 late,meaning_cn,晚的；迟的,confirmed,teacher_pdf_gloss,
 late,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=16;ECDICT_rank_input=snapshotted
 late,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=16;scope=historical_partial_2010_2022
-late,word_family,lately,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+late,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 late,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 lately,phonetic,/ˈleɪtli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 lately,pos,adv.,confirmed,ECDICT,
 lately,meaning_cn,最近；不久前,confirmed,teacher_pdf_gloss,
 lately,level,4,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=1;ECDICT_rank_input=snapshotted
 lately,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=1;scope=historical_partial_2010_2022
-lately,word_family,late,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+lately,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 lately,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 later,phonetic,/ˈleɪtɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 later,pos,adv.,confirmed,ECDICT,
@@ -12653,7 +12653,7 @@ less,pos,n./adj./adv.,confirmed,ECDICT,
 less,meaning_cn,少于；小于,confirmed,teacher_pdf_gloss,
 less,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=18;ECDICT_rank_input=snapshotted
 less,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=18;scope=historical_partial_2010_2022
-less,word_family,unless,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+less,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 less,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 lesson,phonetic,/ˈlɛsən/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 lesson,pos,n.,confirmed,ECDICT,
@@ -12737,7 +12737,7 @@ life,pos,n.,confirmed,ECDICT,
 life,meaning_cn,生命；生涯,confirmed,teacher_pdf_gloss,
 life,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=24;ECDICT_rank_input=snapshotted
 life,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=24;scope=historical_partial_2010_2022
-life,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+life,word_family,lively,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 life,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 lifetime,phonetic,/ˈlaɪfˌtaɪm/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 lifetime,pos,n./adj.,confirmed,ECDICT,
@@ -12772,14 +12772,14 @@ like,pos,prep.,confirmed,curated_function_words,
 like,meaning_cn,像；跟,confirmed,teacher_pdf_gloss,
 like,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=30;ECDICT_rank_input=snapshotted
 like,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=30;scope=historical_partial_2010_2022
-like,word_family,"likely,unlike",partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+like,word_family,unlike,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 like,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 likely,phonetic,/ˈlaɪkli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 likely,pos,adj./adv.,confirmed,ECDICT,
 likely,meaning_cn,很可能的,confirmed,teacher_pdf_gloss,
 likely,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=required;paper_hits=19;ECDICT_rank_input=snapshotted
 likely,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=19;scope=historical_partial_2010_2022
-likely,word_family,like,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+likely,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 likely,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 limit,phonetic,/ˈlɪmət/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 limit,pos,n./v.,confirmed,ECDICT,
@@ -12884,14 +12884,14 @@ live,pos,v./adj./adv.,confirmed,ECDICT,
 live,meaning_cn,生活；居住,confirmed,curated_override,
 live,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=23;ECDICT_rank_input=snapshotted
 live,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=23;scope=historical_partial_2010_2022
-live,word_family,lively,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+live,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 live,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 lively,phonetic,/ˈlaɪvli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 lively,pos,adj.,confirmed,ECDICT,
 lively,meaning_cn,活泼的；充满生气的,confirmed,teacher_pdf_gloss,
 lively,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=2;ECDICT_rank_input=snapshotted
 lively,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=2;scope=historical_partial_2010_2022
-lively,word_family,live,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+lively,word_family,life,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 lively,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 living,phonetic,/ˈlɪvɪŋ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 living,pos,n./adj.,confirmed,ECDICT,
@@ -13752,7 +13752,7 @@ miss,pos,n./v.,confirmed,ECDICT,
 miss,meaning_cn,错过；想念,confirmed,curated_override,
 miss,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=14;ECDICT_rank_input=snapshotted
 miss,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=14;scope=historical_partial_2010_2022
-miss,word_family,dismiss,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+miss,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 miss,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 missile,phonetic,/ˈmɪsəl/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 missile,pos,n./adj.,confirmed,ECDICT,
@@ -13962,14 +13962,14 @@ most,pos,pron.,confirmed,curated_function_words,
 most,meaning_cn,最多；最大,confirmed,ECDICT,
 most,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=30;ECDICT_rank_input=snapshotted
 most,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=30;scope=historical_partial_2010_2022
-most,word_family,mostly,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+most,word_family,mostly,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 most,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 mostly,phonetic,/ˈmoʊsli/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 mostly,pos,adv.,confirmed,ECDICT,
 mostly,meaning_cn,大概；大部分,confirmed,ECDICT,
 mostly,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=selective_required;paper_hits=7;ECDICT_rank_input=snapshotted
 mostly,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=7;scope=historical_partial_2010_2022
-mostly,word_family,most,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+mostly,word_family,most,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 mostly,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 mother,phonetic,/ˈməðɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 mother,pos,n./v.,confirmed,ECDICT,
@@ -14249,7 +14249,7 @@ near,pos,prep.,confirmed,curated_function_words,
 near,meaning_cn,近的；附近,confirmed,teacher_pdf_gloss,
 near,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=12;ECDICT_rank_input=snapshotted
 near,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=12;scope=historical_partial_2010_2022
-near,word_family,nearly,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+near,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 near,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 nearby,phonetic,/ˈnɪrˈbaɪ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 nearby,pos,adj./adv./prep.,confirmed,ECDICT,
@@ -14263,7 +14263,7 @@ nearly,pos,adv.,confirmed,ECDICT,
 nearly,meaning_cn,将近；几乎,confirmed,teacher_pdf_gloss,
 nearly,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=8;ECDICT_rank_input=snapshotted
 nearly,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=8;scope=historical_partial_2010_2022
-nearly,word_family,near,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+nearly,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 nearly,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 neat,phonetic,/ˈnit/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 neat,pos,n./adj.,confirmed,ECDICT,
@@ -15348,7 +15348,7 @@ paint,pos,n./v.,confirmed,ECDICT,
 paint,meaning_cn,油漆；粉刷,confirmed,teacher_pdf_gloss,
 paint,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=5;ECDICT_rank_input=snapshotted
 paint,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=5;scope=historical_partial_2010_2022
-paint,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+paint,word_family,painting,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 paint,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 painter,phonetic,/ˈpeɪntɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 painter,pos,n.,confirmed,ECDICT,
@@ -15362,7 +15362,7 @@ painting,pos,n.,confirmed,ECDICT,
 painting,meaning_cn,油画；水彩画,confirmed,teacher_pdf_gloss,
 painting,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=6;ECDICT_rank_input=snapshotted
 painting,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=6;scope=historical_partial_2010_2022
-painting,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+painting,word_family,paint,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 painting,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 pair,phonetic,/ˈpɛr/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 pair,pos,n./v.,confirmed,ECDICT,
@@ -16139,7 +16139,7 @@ play,pos,n./v.,confirmed,ECDICT,
 play,meaning_cn,玩；打,confirmed,teacher_pdf_gloss,
 play,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=22;ECDICT_rank_input=snapshotted
 play,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=22;scope=historical_partial_2010_2022
-play,word_family,display,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+play,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 play,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 player,phonetic,/ˈpleɪɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 player,pos,n.,confirmed,ECDICT,
@@ -19464,7 +19464,7 @@ short,pos,n./v./adj./adv.,confirmed,ECDICT,
 short,meaning_cn,短的；矮的,confirmed,teacher_pdf_gloss,
 short,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=13;ECDICT_rank_input=snapshotted
 short,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=13;scope=historical_partial_2010_2022
-short,word_family,shortly,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+short,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 short,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 shortage,phonetic,/ˈʃɔrtədʒ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 shortage,pos,n.,confirmed,ECDICT,
@@ -19478,7 +19478,7 @@ shortly,pos,adv.,confirmed,ECDICT,
 shortly,meaning_cn,不久,confirmed,teacher_pdf_gloss,
 shortly,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=1;ECDICT_rank_input=snapshotted
 shortly,gaokao_frequency,low,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=1;scope=historical_partial_2010_2022
-shortly,word_family,short,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+shortly,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 shortly,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 shorts,phonetic,/ˈʃɔrts/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 shorts,pos,n.,confirmed,ECDICT,
@@ -22204,18 +22204,18 @@ tip,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=
 tip,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
 tip,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 tire,phonetic,/ˈtaɪɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
-tire,pos,n./v.,confirmed,ECDICT,
-tire,meaning_cn,使疲劳,confirmed,teacher_pdf_gloss,
+tire,pos,n./v.,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,atomic tire/tired field correction; decision CSV hash is pinned in source-lock.json
+tire,meaning_cn,轮胎；使疲劳；使厌倦,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,atomic tire/tired field correction; decision CSV hash is pinned in source-lock.json
 tire,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=2;ECDICT_rank_input=snapshotted
 tire,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=2;scope=historical_partial_2010_2022
-tire,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+tire,word_family,tired,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 tire,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 tired,phonetic,/ˈtaɪɝd/,confirmed,ipa-dict(en_US/CMUdict),corroborated
-tired,pos,adj.,confirmed,ECDICT,
-tired,meaning_cn,使累；轮胎,confirmed,teacher_pdf_gloss,
+tired,pos,adj.,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,atomic tire/tired field correction; decision CSV hash is pinned in source-lock.json
+tired,meaning_cn,疲倦的；厌烦的,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,atomic tire/tired field correction; decision CSV hash is pinned in source-lock.json
 tired,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=8;ECDICT_rank_input=snapshotted
 tired,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=8;scope=historical_partial_2010_2022
-tired,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+tired,word_family,tire,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 tired,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 tissue,phonetic,/ˈtɪsˌju/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 tissue,pos,n.,confirmed,ECDICT,
@@ -22488,7 +22488,7 @@ train,pos,n./v.,confirmed,ECDICT,
 train,meaning_cn,火车；培训,confirmed,teacher_pdf_gloss,
 train,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=15;ECDICT_rank_input=snapshotted
 train,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=15;scope=historical_partial_2010_2022
-train,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+train,word_family,training,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 train,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 trainer,phonetic,/ˈtreɪnɝ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 trainer,pos,n.,confirmed,ECDICT,
@@ -22502,7 +22502,7 @@ training,pos,n.,confirmed,ECDICT,
 training,meaning_cn,培训,confirmed,teacher_pdf_gloss,
 training,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=9;ECDICT_rank_input=snapshotted
 training,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=9;scope=historical_partial_2010_2022
-training,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+training,word_family,train,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 training,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 transform,phonetic,/ˈtrænsfɔrm/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 transform,pos,v.,confirmed,ECDICT,
@@ -23020,14 +23020,14 @@ unless,pos,conj.,confirmed,curated_function_words,
 unless,meaning_cn,如果不；除非,confirmed,teacher_pdf_gloss,
 unless,level,2,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=5;ECDICT_rank_input=snapshotted
 unless,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=5;scope=historical_partial_2010_2022
-unless,word_family,less,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+unless,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 unless,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 unlike,phonetic,/ənˈlaɪk/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 unlike,pos,prep.,confirmed,curated_function_words,
 unlike,meaning_cn,不像；和,confirmed,teacher_pdf_gloss,
 unlike,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=3;ECDICT_rank_input=snapshotted
 unlike,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=3;scope=historical_partial_2010_2022
-unlike,word_family,like,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+unlike,word_family,like,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 unlike,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 until,phonetic,/ənˈtɪl/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 until,pos,conj.,confirmed,curated_function_words,
@@ -24007,14 +24007,14 @@ will,pos,v.,confirmed,curated_modal_verbs,
 will,meaning_cn,将要；愿意,confirmed,curated_override,
 will,level,1,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=junior;paper_hits=30;ECDICT_rank_input=snapshotted
 will,gaokao_frequency,high,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=30;scope=historical_partial_2010_2022
-will,word_family,,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+will,word_family,,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 will,tags,action,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 willing,phonetic,/ˈwɪlɪŋ/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 willing,pos,adj.,confirmed,ECDICT,
 willing,meaning_cn,乐意的；愿意的,confirmed,teacher_pdf_gloss,
 willing,level,3,confirmed,curio_pipeline_rank_and_fixed_quotas,official_level=extension;paper_hits=3;ECDICT_rank_input=snapshotted
 willing,gaokao_frequency,medium,confirmed,GAOKAO-Bench_30_papers_2010_2022,paper_hits=3;scope=historical_partial_2010_2022
-willing,word_family,willingness,partial,curio_pipeline_conservative_surface_affix_policy,no_original_row_level_source_column;reproduced_from_fixed_policy_and_headword_set
+willing,word_family,willingness,confirmed,P0-B-WFMR-2026-08-13 approved manual decision,controlled update; decision CSV hash is pinned in source-lock.json
 willing,tags,description,partial,curio_pipeline_keyword_or_pos_fallback_policy,not_ECDICT_tag;no_original_row_level_source_column;policy_reproduced=true
 willingness,phonetic,/ˈwɪlɪŋnəs/,confirmed,ipa-dict(en_US/CMUdict),corroborated
 willingness,pos,n.,confirmed,ECDICT,

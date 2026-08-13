@@ -1,0 +1,389 @@
+[
+  {
+    "word": "apart",
+    "before_word_family": "apartment",
+    "after_word_family": "",
+    "before_pos": "adj./adv.",
+    "after_pos": "adj./adv.",
+    "before_meaning_cn": "分离；相距",
+    "after_meaning_cn": "分离；相距"
+  },
+  {
+    "word": "apartment",
+    "before_word_family": "apart",
+    "after_word_family": "",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "房间；公寓",
+    "after_meaning_cn": "房间；公寓"
+  },
+  {
+    "word": "bare",
+    "before_word_family": "barely",
+    "after_word_family": "",
+    "before_pos": "v./adj.",
+    "after_pos": "v./adj.",
+    "before_meaning_cn": "赤裸的；空的",
+    "after_meaning_cn": "赤裸的；空的"
+  },
+  {
+    "word": "barely",
+    "before_word_family": "bare",
+    "after_word_family": "",
+    "before_pos": "adv.",
+    "after_pos": "adv.",
+    "before_meaning_cn": "几乎不",
+    "after_meaning_cn": "几乎不"
+  },
+  {
+    "word": "base",
+    "before_word_family": "basement",
+    "after_word_family": "",
+    "before_pos": "n./v./adj.",
+    "after_pos": "n./v./adj.",
+    "before_meaning_cn": "根据地；垒",
+    "after_meaning_cn": "根据地；垒"
+  },
+  {
+    "word": "basement",
+    "before_word_family": "base",
+    "after_word_family": "",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "地下室",
+    "after_meaning_cn": "地下室"
+  },
+  {
+    "word": "can",
+    "before_word_family": "",
+    "after_word_family": "could",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "能；可以",
+    "after_meaning_cn": "能；可以"
+  },
+  {
+    "word": "confuse",
+    "before_word_family": "",
+    "after_word_family": "confused",
+    "before_pos": "v.",
+    "after_pos": "v.",
+    "before_meaning_cn": "使迷惑；混淆",
+    "after_meaning_cn": "使迷惑；混淆"
+  },
+  {
+    "word": "confused",
+    "before_word_family": "",
+    "after_word_family": "confuse",
+    "before_pos": "adj.",
+    "after_pos": "adj.",
+    "before_meaning_cn": "困惑的；混乱的",
+    "after_meaning_cn": "困惑的；混乱的"
+  },
+  {
+    "word": "could",
+    "before_word_family": "",
+    "after_word_family": "can",
+    "before_pos": "v.",
+    "after_pos": "v.",
+    "before_meaning_cn": "可以；能",
+    "after_meaning_cn": "可以；能"
+  },
+  {
+    "word": "count",
+    "before_word_family": "discount",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "数；点数",
+    "after_meaning_cn": "数；点数"
+  },
+  {
+    "word": "cover",
+    "before_word_family": "discover",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "盖子；罩",
+    "after_meaning_cn": "盖子；罩"
+  },
+  {
+    "word": "discount",
+    "before_word_family": "count",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "折扣",
+    "after_meaning_cn": "折扣"
+  },
+  {
+    "word": "discover",
+    "before_word_family": "cover",
+    "after_word_family": "",
+    "before_pos": "v.",
+    "after_pos": "v.",
+    "before_meaning_cn": "发现",
+    "after_meaning_cn": "发现"
+  },
+  {
+    "word": "disease",
+    "before_word_family": "ease",
+    "after_word_family": "",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "病；疾病",
+    "after_meaning_cn": "病；疾病"
+  },
+  {
+    "word": "dismiss",
+    "before_word_family": "miss",
+    "after_word_family": "",
+    "before_pos": "v.",
+    "after_pos": "v.",
+    "before_meaning_cn": "让；离开",
+    "after_meaning_cn": "让；离开"
+  },
+  {
+    "word": "display",
+    "before_word_family": "play",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "显示；陈列",
+    "after_meaning_cn": "显示；陈列"
+  },
+  {
+    "word": "ease",
+    "before_word_family": "disease",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "减轻；缓解",
+    "after_meaning_cn": "减轻；缓解"
+  },
+  {
+    "word": "hard",
+    "before_word_family": "hardly",
+    "after_word_family": "",
+    "before_pos": "adj./adv.",
+    "after_pos": "adj./adv.",
+    "before_meaning_cn": "坚硬的；硬的",
+    "after_meaning_cn": "坚硬的；硬的"
+  },
+  {
+    "word": "hardly",
+    "before_word_family": "hard",
+    "after_word_family": "",
+    "before_pos": "adv.",
+    "after_pos": "adv.",
+    "before_meaning_cn": "几乎不",
+    "after_meaning_cn": "几乎不"
+  },
+  {
+    "word": "interest",
+    "before_word_family": "",
+    "after_word_family": "interesting",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "兴趣；利息",
+    "after_meaning_cn": "兴趣；利息"
+  },
+  {
+    "word": "interesting",
+    "before_word_family": "",
+    "after_word_family": "interest",
+    "before_pos": "adj.",
+    "after_pos": "adj.",
+    "before_meaning_cn": "有趣的",
+    "after_meaning_cn": "有趣的"
+  },
+  {
+    "word": "late",
+    "before_word_family": "lately",
+    "after_word_family": "",
+    "before_pos": "adj./adv.",
+    "after_pos": "adj./adv.",
+    "before_meaning_cn": "晚的；迟的",
+    "after_meaning_cn": "晚的；迟的"
+  },
+  {
+    "word": "lately",
+    "before_word_family": "late",
+    "after_word_family": "",
+    "before_pos": "adv.",
+    "after_pos": "adv.",
+    "before_meaning_cn": "最近；不久前",
+    "after_meaning_cn": "最近；不久前"
+  },
+  {
+    "word": "less",
+    "before_word_family": "unless",
+    "after_word_family": "",
+    "before_pos": "n./adj./adv.",
+    "after_pos": "n./adj./adv.",
+    "before_meaning_cn": "少于；小于",
+    "after_meaning_cn": "少于；小于"
+  },
+  {
+    "word": "life",
+    "before_word_family": "",
+    "after_word_family": "lively",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "生命；生涯",
+    "after_meaning_cn": "生命；生涯"
+  },
+  {
+    "word": "like",
+    "before_word_family": "likely,unlike",
+    "after_word_family": "unlike",
+    "before_pos": "prep.",
+    "after_pos": "prep.",
+    "before_meaning_cn": "像；跟",
+    "after_meaning_cn": "像；跟"
+  },
+  {
+    "word": "likely",
+    "before_word_family": "like",
+    "after_word_family": "",
+    "before_pos": "adj./adv.",
+    "after_pos": "adj./adv.",
+    "before_meaning_cn": "很可能的",
+    "after_meaning_cn": "很可能的"
+  },
+  {
+    "word": "live",
+    "before_word_family": "lively",
+    "after_word_family": "",
+    "before_pos": "v./adj./adv.",
+    "after_pos": "v./adj./adv.",
+    "before_meaning_cn": "生活；居住",
+    "after_meaning_cn": "生活；居住"
+  },
+  {
+    "word": "lively",
+    "before_word_family": "live",
+    "after_word_family": "life",
+    "before_pos": "adj.",
+    "after_pos": "adj.",
+    "before_meaning_cn": "活泼的；充满生气的",
+    "after_meaning_cn": "活泼的；充满生气的"
+  },
+  {
+    "word": "miss",
+    "before_word_family": "dismiss",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "错过；想念",
+    "after_meaning_cn": "错过；想念"
+  },
+  {
+    "word": "near",
+    "before_word_family": "nearly",
+    "after_word_family": "",
+    "before_pos": "prep.",
+    "after_pos": "prep.",
+    "before_meaning_cn": "近的；附近",
+    "after_meaning_cn": "近的；附近"
+  },
+  {
+    "word": "nearly",
+    "before_word_family": "near",
+    "after_word_family": "",
+    "before_pos": "adv.",
+    "after_pos": "adv.",
+    "before_meaning_cn": "将近；几乎",
+    "after_meaning_cn": "将近；几乎"
+  },
+  {
+    "word": "paint",
+    "before_word_family": "",
+    "after_word_family": "painting",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "油漆；粉刷",
+    "after_meaning_cn": "油漆；粉刷"
+  },
+  {
+    "word": "painting",
+    "before_word_family": "",
+    "after_word_family": "paint",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "油画；水彩画",
+    "after_meaning_cn": "油画；水彩画"
+  },
+  {
+    "word": "play",
+    "before_word_family": "display",
+    "after_word_family": "",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "玩；打",
+    "after_meaning_cn": "玩；打"
+  },
+  {
+    "word": "short",
+    "before_word_family": "shortly",
+    "after_word_family": "",
+    "before_pos": "n./v./adj./adv.",
+    "after_pos": "n./v./adj./adv.",
+    "before_meaning_cn": "短的；矮的",
+    "after_meaning_cn": "短的；矮的"
+  },
+  {
+    "word": "shortly",
+    "before_word_family": "short",
+    "after_word_family": "",
+    "before_pos": "adv.",
+    "after_pos": "adv.",
+    "before_meaning_cn": "不久",
+    "after_meaning_cn": "不久"
+  },
+  {
+    "word": "tire",
+    "before_word_family": "",
+    "after_word_family": "tired",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "使疲劳",
+    "after_meaning_cn": "轮胎；使疲劳；使厌倦"
+  },
+  {
+    "word": "tired",
+    "before_word_family": "",
+    "after_word_family": "tire",
+    "before_pos": "adj.",
+    "after_pos": "adj.",
+    "before_meaning_cn": "使累；轮胎",
+    "after_meaning_cn": "疲倦的；厌烦的"
+  },
+  {
+    "word": "train",
+    "before_word_family": "",
+    "after_word_family": "training",
+    "before_pos": "n./v.",
+    "after_pos": "n./v.",
+    "before_meaning_cn": "火车；培训",
+    "after_meaning_cn": "火车；培训"
+  },
+  {
+    "word": "training",
+    "before_word_family": "",
+    "after_word_family": "train",
+    "before_pos": "n.",
+    "after_pos": "n.",
+    "before_meaning_cn": "培训",
+    "after_meaning_cn": "培训"
+  },
+  {
+    "word": "unless",
+    "before_word_family": "less",
+    "after_word_family": "",
+    "before_pos": "conj.",
+    "after_pos": "conj.",
+    "before_meaning_cn": "如果不；除非",
+    "after_meaning_cn": "如果不；除非"
+  }
+]

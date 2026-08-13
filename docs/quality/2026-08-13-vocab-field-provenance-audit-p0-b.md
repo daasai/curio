@@ -4,7 +4,7 @@
 > 实施目录：`/Users/shawn/Nexus/Curio`  
 > 数据范围：`data/curio_gaokao_vocabulary.csv` 与 `data/curio.db/vocab_library`  
 > 结论状态：**P0-B 已完成；通过但保留已披露限制**  
-> 变更边界：未修改生产 CSV，未写入或 reseed 生产数据库，未部署、提交或推送
+> 版本状态：历史 P0-B 基线保留；2026-08-13 已实施一批受控的人工审核数据修订，并用既有 seed 流程同步 SQLite。未部署、提交或推送。
 
 ## 一、结论
 
@@ -20,9 +20,11 @@
 Nexus 当前 CSV --seed.ts--> vocab_library（3500 行、7 字段差异 0）
 ```
 
+历史基线未被替换：当前 CSV 是“历史基线 + 已批准审核决策”的受控版本，SHA-256 为 `f537314786a0d33e67920b7263d2f8da3a11b40491499c15ff734fe3cf746bed`。完整版本链及可回滚材料在 `data/audits/vocab-p0b/source-lock.json` 与 `controlled-updates/2026-08-13-word-family-manual-review/`；历史 `60d4…022` hash 仍作为基线保存。
+
 主要发现：
 
-- `phonetic`、`pos`、`meaning_cn`、`level`、`gaokao_frequency`、`tags` 均为 3500/3500 非空；`word_family` 为 189/3500 非空，共 196 个关系成员。
+- `phonetic`、`pos`、`meaning_cn`、`level`、`gaokao_frequency`、`tags` 均为 3500/3500 非空；受控修订后 `word_family` 为 174/3500 非空，共 180 个关系成员（历史基线为 189/196）。
 - 七个字段在 CSV 与 SQLite 之间均无冲突；现有格式规则下无格式异常、无字面占位值。
 - ECDICT **实际参与过**：3296 行词性选择 ECDICT，527 行释义选择 ECDICT；3494 个词有正的 `bnc` 或 `frq` 排名输入，ECDICT 的 `gk` 标签也参与扩展词筛选。
 - ECDICT **没有生成当前产品 `tags` 或 `word_family`**。`tags` 来自 Curio 的中文关键词/词性回退规则与 18 个显式覆盖；`word_family` 来自 Curio 的保守表面词缀规则。
@@ -69,7 +71,7 @@ CSV 到 SQLite 的只读逐字段比对结果为 0 差异。生产 CSV 与数据
 | `meaning_cn` | 3500 | 0 | 0 | 教师资料释义 2915；ECDICT 527；人工覆盖 58 |
 | `level` | 3500 | 0 | 0 | 由试卷命中、ECDICT `bnc/frq`、课标层级、词长排序及固定 800/800/900/1000 配额生成；3500 行复算一致 |
 | `gaokao_frequency` | 3500 | 0 | 0 | GAOKAO-Bench 2010–2022 的 30 个年份-卷别单元；`>=5 high`、`2–4 medium`、其余 low；3500 行复算一致 |
-| `word_family` | 189 | 0 | 0 | 由 Curio 表面词缀规则生成；规则可复算，但原 evidence 无专门逐行来源列，记为部分可追溯 |
+| `word_family` | 174 | 0 | 0 | 历史值来自 Curio 表面词缀规则；43 个已批准词头遵循本次受控人工审核决策，均有决策 hash、diff 和回滚材料 |
 | `tags` | 3500 | 0 | 0 | Curio 中文关键词/词性回退 + 18 个覆盖；不是 ECDICT `tag`，原 evidence 无专门逐行来源列，记为部分可追溯 |
 
 覆盖率高只表示字段有值。音标口径、释义权利、语义正确性和上游冲突仍以 evidence、固定来源和披露边界为准。
@@ -161,7 +163,7 @@ npm run audit:vocab
 |---|---|
 | `npm run audit:vocab` | `PASS_WITH_DISCLOSED_LIMITATIONS`；3500 词；CSV↔DB 冲突 0 |
 | `npm run test:vocab-audit` | 1 pass / 0 fail；包含生产 CSV/DB 前后 hash 不变断言 |
-| `npm run test:content` | `CONTENT_AUDIT_PASS`；3500 词、189 个非空词族、10 个可用章节 |
+| `npm run test:content` | `CONTENT_AUDIT_PASS`；3500 词、174 个非空词族、10 个可用章节 |
 | `npm run test:api` | 34 pass / 0 fail；含词汇持久化与空词族合同 |
 | 原始词库流水线 `pytest` | 25 pass / 0 fail；禁用缓存和字节码写入运行 |
 
@@ -170,4 +172,3 @@ npm run audit:vocab
 不改词库的最小后续动作是：先人工复核 `word-family-classification.csv` 中 40 个 `manual_review` 词头，确认应删除、保留或改成哪一条关系；再对 118 个 `auto_fill_candidate` 抽样制定可接受门槛。只有形成明确的关系定义、人工判定记录和回归测试后，才考虑单独的数据变更批次。
 
 许可证最小动作是：补齐教师 PDF 的来源、授权人与授权范围；为 ipa-dict、CMUdict、ECDICT 固定上游 commit 或 release，并保存对应 LICENSE/NOTICE。完成前，不把“仓库 License 已知”写成“全部聚合数据商业权利已确认”。
-

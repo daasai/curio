@@ -573,7 +573,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
   completeOnboarding: async () => {
     const state = get();
-    let result: { success?: boolean; idempotent?: boolean } | null;
+    let result: { success?: boolean; idempotent?: boolean; error?: { code?: string } } | null;
     try {
       result = await import('./apiClient').then(({ saveOnboardingApi }) => saveOnboardingApi({
         commandId: createClientId(),
@@ -591,7 +591,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     } catch {
       return false;
     }
-    if (!result?.success && !result?.idempotent) return false;
+    // A previous successful onboarding is authoritative. The API rejects a
+    // second write to preserve the first baseline, so recover from its snapshot
+    // instead of leaving the user on the decorative loading screen.
+    const baselineAlreadySaved = result?.error?.code === 'BASELINE_ALREADY_SET';
+    if (!result?.success && !result?.idempotent && !baselineAlreadySaved) return false;
     const demoWord = get().selectedDemo?.word;
     if (demoWord) {
       get().unlockWord(demoWord);
@@ -601,7 +605,8 @@ export const useAppStore = create<AppState>((set, get) => ({
     // client-only profile that disappears on the next page load.
     try {
       const snapshot = await import('./apiClient').then(({ getLearningSnapshotApi }) => getLearningSnapshotApi());
-      if (snapshot) get().loadSnapshot(snapshot);
+      if (!snapshot) return false;
+      get().loadSnapshot(snapshot);
     } catch {
       return false;
     }
