@@ -20,6 +20,8 @@ build
 /data/backups/
 
 # Local tooling and test artifacts
+/.agents/
+/.workbuddy/
 /.scratch/
 /playwright-report/
 /test-results/
