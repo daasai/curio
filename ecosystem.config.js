@@ -3,9 +3,10 @@ module.exports = {
     {
       name: 'curio-api',
       cwd: '/var/www/curio',
-      // Kept versioned so the release script and PM2 use the same lockfile-
-      // compatible runtime. Upgrade this path only as part of a checked release.
-      script: '/root/.bun/bin/bun-1.2.18',
+      // The controlled deploy workflow passes a deploy-account-owned, versioned
+      // Bun path through BUN_BIN. Keep the legacy path only for existing local
+      // operator invocations that do not provide that explicit release input.
+      script: process.env.BUN_BIN || '/root/.bun/bin/bun-1.2.18',
       args: 'run apps/api/src/server.ts',
       env: {
         // The public DAAS site is HTTPS-only. Curio remains an invited pilot,
